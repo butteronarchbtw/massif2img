@@ -1,0 +1,40 @@
+CompileFlags:
+  Add: [-Wall, -Wextra, -Wconversion]
+Diagnostics:
+  UnusedIncludes: Strict
+  ClangTidy:
+    Add: ['modernize-*', 'bugprone-*', 'cert-*', 'readability-*', 'performance-*', 'cppcoreguidelines-*', 'misc-misleading-*', 'misc-redundant-expression', 'misc-static-assert', 'misc-throw-by-value-catch-by-reference']
+    Remove: ['modernize-use-auto',
+        'modernize-use-trailing-return-type',
+        'modernize-use-default-member-init',
+        'modernize-return-braced-init-list',
+        'bugprone-easily-swappable-parameters',
+        'cert-err58-cpp',
+        'cppcoreguidelines-non-private-member-variables-in-classes',
+        'cppcoreguidelines-owning-memory',
+        'cppcoreguidelines-init-variables',
+        'cppcoreguidelines-special-member-functions',
+        'cppcoreguidelines-pro-*',
+        'cppcoreguidelines-avoid-non-const-global-variables',
+        'cppcoreguidelines-macro-usage',
+        'cppcoreguidelines-avoid-const-or-ref-data-members',
+        'cppcoreguidelines-avoid-do-while',
+        'readability-identifier-length',
+        'readability-simplify-boolean-expr',
+        'performance-avoid-endl',
+        'misc-use-anonymous-namespace']
+    CheckOptions:
+      readability-identifier-naming.VariableCase: camelBack
+      readability-identifier-naming.GlobalConstantCase: CamelCase
+      readability-identifier-naming.PrivateMemberPrefix: _
+      readability-identifier-naming.ConstantMemberPrefix: _
+      readability-identifier-naming.ClassMemberPrefix: _
+      readability-braces-around-statements.ShortStatementLines: 2
+      readability-function-cognitive-complexity.Threshold: 100
+      readability-function-cognitive-complexity.IgnoreMacros: true
+      readability-magic-numbers.IgnoredIntegerValues: 0;1;2;3;4;5;6;7;8;9;10;100;1000;16;32;64;128;255;512;1024;2048;4096;8192;16384;32768;32768
+      readability-magic-numbers.IgnoreBitFieldsWidths: true
+      readability-magic-numbers.IgnorePowersOf2IntegerValues: true
+      cppcoreguidelines-avoid-magic-numbers.IgnorePowersOf2IntegerValues: true
+      cppcoreguidelines-avoid-magic-numbers.IgnoredIntegerValues: 0;1;2;3;4;5;6;7;8;9;10;100;1000;16;32;64;128;255;512;1024;2048;4096;8192;16384;32768;32768
+

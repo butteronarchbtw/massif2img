@@ -1,0 +1,18 @@
+FROM debian:latest AS build
+
+RUN apt update -y
+RUN apt install -y build-essential cmake git ninja-build
+
+WORKDIR /app
+COPY . .
+RUN cmake -B build -G Ninja -DBUILD_TESTS=ON
+RUN cmake --build build
+
+FROM debian:latest AS test
+WORKDIR /app
+
+RUN apt update -y
+RUN apt install -y cmake
+
+COPY --from=build /app/build ./build
+RUN ctest --test-dir build

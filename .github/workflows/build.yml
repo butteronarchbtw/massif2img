@@ -1,0 +1,37 @@
+name: Build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Clang
+        run: |
+          wget https://apt.llvm.org/llvm.sh
+          chmod +x llvm.sh
+          sudo ./llvm.sh 17
+          sudo apt install -y libc++-17-dev libc++abi-17-dev clang-format-17
+
+      - name: Install Dependencies
+        run: |
+          sudo apt update -y
+          sudo apt install -y cmake ninja-build git cppcheck
+
+      - name: Check Formatting
+        run: |
+          CLANG_FORMAT_BIN=clang-format-17 ./scripts/check-format.sh
+
+      - name: CMake Configure
+        run: cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTS=OFF -DCMAKE_CXX_COMPILER=clang++-17 -DCMAKE_CXX_FLAGS="-stdlib=libc++"
+
+      - name: CMake Build
+        run: cmake --build build

@@ -1,0 +1,26 @@
+IndentWidth: 4
+UseTab: Never
+ColumnLimit: 0
+
+AccessModifierOffset: -4
+AlignAfterOpenBracket: DontAlign
+AlignConsecutiveAssignments: Consecutive
+AlignConsecutiveDeclarations: Consecutive
+AlignConsecutiveMacros: Consecutive
+AlignEscapedNewlines: Left
+AlignOperands: Align
+AllowAllArgumentsOnNextLine: true
+AllowAllConstructorInitializersOnNextLine: true
+AllowAllParametersOfDeclarationOnNextLine: true
+BreakBeforeBraces: Attach
+BreakConstructorInitializers: AfterColon
+ConstructorInitializerIndentWidth: 8
+FixNamespaceComments: false
+IncludeBlocks: Regroup
+IndentCaseLabels: false
+NamespaceIndentation: All
+PointerAlignment: Left
+SortIncludes: CaseInsensitive
+SpaceAfterTemplateKeyword: false
+SpaceBeforeCpp11BracedList: true
+SpaceBeforeParens: Never

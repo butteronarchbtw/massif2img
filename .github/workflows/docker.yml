@@ -1,0 +1,38 @@
+name: Docker
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-debian:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build with Docker on Debian
+        run: docker build --target build -f docker/Dockerfile.debian .
+  test-debian:
+    runs-on: ubuntu-latest
+
+    needs: build-debian
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Test with Docker on Debian
+        run: docker build --target test -f docker/Dockerfile.debian .
+  build-nix:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build with Docker on Nix
+        run: docker build -f docker/Dockerfile.nix .
