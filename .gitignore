@@ -2,3 +2,4 @@ build/
 .cache/
 massif.out
 .mypy_cache/
+docs/site/

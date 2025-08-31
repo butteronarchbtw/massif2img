@@ -1,0 +1,6 @@
+site_name: massif2img
+nav:
+  - Home: index.md
+  - Building: building.md
+  - Nix: nix.md
+  - Installing: installing.md
