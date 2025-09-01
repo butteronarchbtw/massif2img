@@ -14,6 +14,7 @@ I needed to generate graphics automatically and not go into a graphical program,
 ## What can it do?
 
 `massif2img` generally generates two files:
+
 * a csv file
 * a python script to generate simple graphics from the csv file
 
