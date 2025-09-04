@@ -30,7 +30,7 @@ The workflow would be:
 
 * run `valgrind`, get `massif.out`
 * `massif2img massif.out` generates `massif.out.csv`, which itself would already be sufficient and `massif.out.py`
-	* massif.out.py` produces `massif.out.pdf`
+	* `massif.out.py` produces `massif.out.pdf`
 * copy `massif.out.csv` and `massif.out.py` where you store your images
 * e.g. in your Makefile add something like
 ```Makefile
