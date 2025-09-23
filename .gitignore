@@ -3,3 +3,5 @@ build/
 massif.out
 .mypy_cache/
 docs/site/
+Testing/
+.direnv/
