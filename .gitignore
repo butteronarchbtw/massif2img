@@ -5,4 +5,4 @@ massif.out
 docs/site/
 Testing/
 .direnv/
-result/
+result
