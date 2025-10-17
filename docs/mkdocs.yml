@@ -4,3 +4,4 @@ nav:
   - Building: building.md
   - Nix: nix.md
   - Installing: installing.md
+  - Style: style.md

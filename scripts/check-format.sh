@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 check_c_style() {
 	printf "checking c++ style... "

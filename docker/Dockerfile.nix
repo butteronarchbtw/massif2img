@@ -1,6 +1,5 @@
-FROM nixos/nix
+FROM ghcr.io/lix-project/lix:latest
 
-RUN nix-channel --update
 WORKDIR /app
 COPY . .
-RUN nix-build -A massif2img nix/default.nix
+RUN nix  --experimental-features 'nix-command flakes' build

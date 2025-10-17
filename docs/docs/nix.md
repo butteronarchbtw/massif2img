@@ -1,13 +1,16 @@
 # Nix
 
 This project can also be built using [nix](https://nixos.org/).
-The `nix/` directory contains all the necessarry files.
+The `nix/` directory contains all the necessary files.
 
-To just build the project, run e.g.
+To just build the project, run
 
 ```sh
-nix build -A massif2img nix/default.nix
+nix build
 ```
 
-The root directory contains a `shell.nix` file for quick use.
-Just run `nix-shell`.
+To set up a dev shell, run
+
+```sh
+nix develop
+```

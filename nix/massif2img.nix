@@ -17,14 +17,13 @@ stdenv.mkDerivation rec {
   };
   buildInputs = [ ];
   nativeBuildInputs = with pkgs; [
-    pkg-config
     cmake
     ninja
-    git
   ];
   cmakeFlags = [
     "-DCMAKE_BUILD_TYPE=Release"
     "-DBUILD_TESTS=OFF"
+    "-G Ninja"
   ];
   configurePhase = ''
     	cmake -B build ${toString cmakeFlags} -DCMAKE_INSTALL_PREFIX=$out

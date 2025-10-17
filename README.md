@@ -12,6 +12,11 @@ cd docs && mkdocs serve
 ```
 to view it locally.
 
+To build the docs with nix, run
+```sh
+nix build .#docs
+```
+
 ## Q&A
 
 ### Q: This could have been a 100 lines python script!

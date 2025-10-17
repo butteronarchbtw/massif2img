@@ -1,7 +1,7 @@
 FROM debian:latest AS build
 
 RUN apt update -y
-RUN apt install -y build-essential cmake git ninja-build
+RUN apt install -y build-essential git cmake ninja-build
 
 WORKDIR /app
 COPY . .
